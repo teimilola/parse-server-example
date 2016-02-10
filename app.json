@@ -16,10 +16,6 @@
     "MASTER_KEY": {
       "description": "A key that overrides all permissions. Keep this secret.",
       "value": "myMasterKey"
-    },
-    "CLIENT_KEY": {
-      "description": "A key that overrides all permissions. Keep this secret.",
-      "value": "clientKey"
     }
   },
   "image": "heroku/nodejs",
