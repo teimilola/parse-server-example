@@ -23,6 +23,7 @@ var api = new ParseServer({
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
   clientKey: process.env.CLIENT_KEY || 'clientKey',
+  javascriptKey: process.env.CLIENT_KEY || 'javascriptKey',
   push: pushConfig
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
