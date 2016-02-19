@@ -17,6 +17,17 @@ if (process.env.GCM_ENABLE) {
                               apiKey: process.env.GCM_API_KEY || ''};
 }
 
+var filesAdapter = null;  // enable Gridstore to be the default
+if (process.env.S3_ENABLE) {
+    var S3Adapter = require('parse-server').S3Adapter;
+
+    filesAdapter = new S3Adapter(
+        process.env.AWS_ACCESS_KEY,
+        process.env.AWS_SECRET_ACCESS_KEY,
+        {bucket: process.env.AWS_BUCKET_NAME, bucketPrefix: "", directAccess: true}
+    );
+}
+
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
@@ -24,7 +35,8 @@ var api = new ParseServer({
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
   clientKey: process.env.CLIENT_KEY || 'clientKey',
   javascriptKey: process.env.JAVASCRIPT_KEY || 'javascriptKey',
-  push: pushConfig
+  push: pushConfig,
+  filesAdapter: filesAdapter
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
