@@ -36,7 +36,8 @@ var api = new ParseServer({
   clientKey: process.env.CLIENT_KEY || 'clientKey',
   javascriptKey: process.env.JAVASCRIPT_KEY || 'javascriptKey',
   push: pushConfig,
-  filesAdapter: filesAdapter
+  filesAdapter: filesAdapter,
+  serverURL: process.env.SERVER_URL  // needed for Parse Cloud and push notifications
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
