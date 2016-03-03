@@ -12,7 +12,7 @@ if (!databaseUri) {
 
 var pushConfig = {};
 
-if (process.env.GCM_ENABLE) {
+if (process.env.GCM_SENDER_ID && process.env.GCM_API_KEY) {
     pushConfig['android'] = { senderId: process.env.GCM_SENDER_ID || '',
                               apiKey: process.env.GCM_API_KEY || ''};
 }
