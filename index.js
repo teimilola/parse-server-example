@@ -33,7 +33,6 @@ var api = new ParseServer({
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
-  clientKey: process.env.CLIENT_KEY || 'clientKey',
   javascriptKey: process.env.JAVASCRIPT_KEY || 'javascriptKey',
   push: pushConfig,
   filesAdapter: filesAdapter,
