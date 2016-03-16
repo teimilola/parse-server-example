@@ -1,3 +1,4 @@
+// Android push test
 Parse.Cloud.define('pushChannelTest', function(request, response) {
 
   // request has 2 parameters: params passed by the client and the authorized user
@@ -41,6 +42,7 @@ Parse.Cloud.define('pushChannelTest', function(request, response) {
   response.success('success');
 });
 
+// iOS push testing
 Parse.Cloud.define("iosPushTest", function(request, response) {
 
   // request has 2 parameters: params passed by the client and the authorized user                                                                                                                               
